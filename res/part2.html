@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw5 part2</title>
+    <style>
+        .c1 {
+            color: rgb(0, 189, 0);
+        }
+        .c2 {
+            color: rgb(221, 90, 90);
+        }
+        .c3 {
+            color: rgb(218, 145, 9);
+        }
+        .c4 {
+            color: rgb(99, 99, 228);
+        }
+        .c5 {
+            color: rgb(196, 52, 196);
+        }
+        #t1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 15px;
+            margin-bottom: 50px;
+        }
+        #t1 thead {
+            border-bottom: 3px solid black;
+            /* box-shadow: 3px 5px black; */
+            /* blur */
+        }
+        #t1 thead td {
+            /* text-align: center; */
+            padding-left: 8px;
+            font-weight: bold;
+
+        }
+        #t1 tbody td {
+            box-shadow: 0px 0px 2px black;
+            padding: 1px 10px;
+        }
+        
+
+        
+
+        .cod {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+        }
+
+        .t2 {
+            max-width: 95%;
+            box-shadow: 0px 0px 3px green;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: 10px 10px 10px 0px;
+        }
+
+        .t2 > div {
+            display: flex;
+        }
+        .t2 div {
+            /* border: 1px solid red; */
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+
+        .t2para {
+            color:rgb(143, 27, 27);
+            padding: 10px;
+        }
+        .t2left {
+            font-weight: bolder;
+            text-align: center;
+            flex: 1;
+        }
+        .t2left > div:nth-child(2){
+            margin-top: -3px;
+            margin-bottom: -3px;
+            color: gray;
+        }
+        .t2digits > div:nth-child(2) {
+            margin-top: -6px;
+            margin-bottom: -6px;
+            color: blue;
+        }
+        .t2digits > div:nth-child(3) {
+            font-style: italic;
+        }
+        .t2digits > div:nth-child(1) {
+            font-size: 18px;
+        }
+        .t2right {
+            flex:3;
+            display: flex;
+        }
+        .t2digits {
+            flex: 1;
+            text-align: center;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .t2right > :nth-child(1), .t2right > :nth-last-child(1) {
+            flex: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="t1">
+        <thead>
+            <td>Opcode</td>
+            <td>Name</td>
+            <td>Pseudocode</td>
+        </thead>
+        <tbody id="i1"></tbody>
+    </table>
+
+    This is list of asdfdfg fdg gf dfg.
+
+    <section id="t2section">
+    <div class="t2">
+        <div>
+            <div class="t2left">
+                <div> ADD x2, x4, x4: </div>
+                <div> x2 🡨🡨 x4 + x4</div>
+                <div> R-TYPE </div>
+            </div>
+            <div class="t2right">
+                <div></div>
+                <div class="t2digits">
+                    <div>0000000</div>
+                    <div>🡫</div>
+                    <div>func7</div>
+                </div>
+                <div class="t2digits">
+                    <div>00100</div>
+                    <div>🡫</div>
+                    <div>rs2</div>
+                </div>
+                <div class="t2digits">
+                    <div>00010</div>
+                    <div>🡫</div>
+                    <div>rs1</div>
+                </div>
+                <div class="t2digits">
+                    <div>000</div>
+                    <div>🡫</div>
+                    <div>func3</div>
+                </div>
+                <div class="t2digits">
+                    <div>00100</div>
+                    <div>🡫</div>
+                    <div>rd</div>
+                </div>
+                <div class="t2digits">
+                    <div>0110011</div>
+                    <div>🡫</div>
+                    <div>opcode</div>
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="t2para">
+            Add te values from asdff and fg gf  and then asdf sg sdf them.
+        </div>
+    </div>
+
+
+    <div class="t2">
+        <div>
+            <div class="t2left">
+                <div> ADD x2, x4, x4: </div>
+                <div> x2 🡨🡨 x4 + x4</div>
+                <div> R-TYPE </div>
+            </div>
+            <div class="t2right">
+                <div></div>
+                <div class="t2digits">
+                    <div>0000000</div>
+                    <div>🡫</div>
+                    <div>func7</div>
+                </div>
+                <div class="t2digits">
+                    <div>00100</div>
+                    <div>🡫</div>
+                    <div>rs2</div>
+                </div>
+                <div class="t2digits">
+                    <div>00010</div>
+                    <div>🡫</div>
+                    <div>rs1</div>
+                </div>
+                <div class="t2digits">
+                    <div>000</div>
+                    <div>🡫</div>
+                    <div>func3</div>
+                </div>
+                <div class="t2digits">
+                    <div>00100</div>
+                    <div>🡫</div>
+                    <div>rd</div>
+                </div>
+                <div class="t2digits">
+                    <div>0110011</div>
+                    <div>🡫</div>
+                    <div>opcode</div>
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="t2para">
+            Add te values from asdff and fg gf  and then asdf sg sdf them.
+        </div>
+    </div>
+
+
+    <div class="t2">
+        <div>
+            <div class="t2left">
+                <div> ADD x2, x4, x4: </div>
+                <div> x2 🡨🡨 x4 + x4</div>
+                <div> R-TYPE </div>
+            </div>
+            <div class="t2right">
+                <div></div>
+                <div class="t2digits">
+                    <div>0000000</div>
+                    <div>🡫</div>
+                    <div>func7</div>
+                </div>
+                <div class="t2digits">
+                    <div>00100</div>
+                    <div>🡫</div>
+                    <div>rs2</div>
+                </div>
+                <div class="t2digits">
+                    <div>00010</div>
+                    <div>🡫</div>
+                    <div>rs1</div>
+                </div>
+                <div class="t2digits">
+                    <div>000</div>
+                    <div>🡫</div>
+                    <div>func3</div>
+                </div>
+                <div class="t2digits">
+                    <div>00100</div>
+                    <div>🡫</div>
+                    <div>rd</div>
+                </div>
+                <div class="t2digits">
+                    <div>0110011</div>
+                    <div>🡫</div>
+                    <div>opcode</div>
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="t2para">
+            Add te values from asdff and fg gf  and then asdf sg sdf them.
+            Add te values from asdff and fg gf  and then asdf sg sdf them.
+            Add te values from asdff and fg gf  and then asdf sg sdf them.
+        </div>
+    </div>
+    </section>
+    
+    <script>
+
+        let a =[
+        ["LUI    " , " Load upper immediate " , "               rd 🡨 imm << 12" ],
+        ["AUIPC  " , " Add upper immediate to PC " , "          rd 🡨 pc + offset << 12" ],
+        ["JAL    " , " Jump and link " ,                      ["rd 🡨 pc + length(inst)"," pc 🡨 pc + offset"] ],
+        ["JALR   " , " Jump and link register " , ["             rd 🡨 pc + length(inst)"," pc 🡨 (rs1 + offset) ∧ -2"] ], 
+        ["BEQ    " , " Branch equal " , "                       if rs1 = rs2 then pc 🡨 pc + offset " ],
+        ["BNE    " , " Branch not equal  " , "                  if rs1 ≠ rs2 then pc 🡨 pc + offset " ],
+        ["BLT    " , " Branch less than " , "                   if rs1 < rs2 then pc 🡨 pc + offset " ],
+        ["BGE    " , " Branch greater  " , "                    if rs1 ≥ rs2 then pc 🡨 pc + offset " ],
+        ["BLTU   " , " Branch less than unsigned " , "          if rs1 < rs2 then pc 🡨 pc + offset " ],
+        ["BGEU   " , " Branch greater than unsigned " , "       if rs1 ≥ rs2 then pc 🡨 pc + offset " ],
+        ["LB     " , " Load byte " , "                          rd 🡨 s8[rs1 + offset] " ],
+        ["LH     " , " Load halfword " , "                      rd 🡨 s16[rs1 + offset] " ],
+        ["LW     " , " Load word " , "                          rd 🡨 s32[rs1 + offset] " ],
+        ["LBU    " , " Load byte unsigned " , "                 rd 🡨 u8[rs1 + offset] " ],
+        ["LHU    " , " Load halfword unsigned " , "             rd 🡨 u16[rs1 + offset] " ],
+        ["SB     " , " Store byte " , "                         u8[rs1 + offset] 🡨 rs2 " ],
+        ["SH     " , " Store halfword " , "                     u16[rs1 + offset] 🡨 rs2 " ],
+        ["SW     " , " Store word " , "                         u32[rs1 + offset] 🡨 rs2 " ],
+        ["ADDI   " , " Add immediate " , "                      rd 🡨 rs1 + sx(imm) " ],
+        ["SLTI   " , " Set less than immediate " , "            rd 🡨 sx(rs1) < sx(imm) " ],
+        ["SLTIU  " , " Set less than immediate unsigned " , "   rd 🡨 ux(rs1) < ux(imm) " ],
+        ["XORI   " , " Exclusive or immediate " , "             rd 🡨 ux(rs1) ^ ux(imm) " ],
+        ["ORI    " , " Or immediate " , "                       rd 🡨 ux(rs1) | ux(imm) " ],
+        ["ANDI   " , " And immediate " , "                      rd 🡨 ux(rs1) & ux(imm) " ],
+        ["SLLI   " , " Shift left logic immediate " , "         rd 🡨 ux(rs1) << ux(imm) " ],
+        ["SRLI   " , " Shift right logic immediate " , "        rd 🡨 ux(rs1) >> ux(imm) " ],
+        ["SRAI   " , " Shift right arithmetic immediate " , "   rd 🡨 sx(rs1) >> ux(imm) " ],
+        ["ADD    " , " Add " , "                                rd 🡨 sx(rs1) + sx(rs2) " ],
+        ["SUB    " , " Subtract " , "                           rd 🡨 sx(rs1) - sx(rs2) " ],
+        ["SLL    " , " Shift left logical " , "                 rd 🡨 ux(rs1) << rs2 " ],
+        ["SLT    " , " Set less than " , "                      rd 🡨 sx(rs1) < sx(rs2) " ],
+        ["SLTU   " , " Set less than unsigned " , "             rd 🡨 ux(rs1) < ux(rs2) " ],
+        ["XOR    " , " Exclusive or " , "                       rd 🡨 ux(rs1) ^ ux(rs2) " ],
+        ["SRL    " , " Shift right logic " , "                  rd 🡨 ux(rs1) >> rs2 " ],
+        ["SRA    " , " Shift right arithmetic " , "             rd 🡨 sx(rs1) >> rs2 " ],
+        ["OR     " , " Or " , "                                 rd 🡨 ux(rs1) | ux(rs2) " ],
+        ["AND    " , " And " , "                                rd 🡨 ux(rs1) & ux(rs2) " ]]
+
+        function colorize(str) {
+            return str.replaceAll('if', '<span class=c1>if</span>' ).
+                replaceAll('then', '<span class=c1>then</span>' ).
+                replaceAll('rs1', '<span class=c2>rs1</span>' ).
+                replaceAll('rs2', '<span class=c2>rs2</span>' ).
+                replaceAll('rd', '<span class=c2>rd</span>' ).
+                replaceAll('pc', '<span class=c2>pc</span>' ).
+                replaceAll('s8', '<span class=c3>s8</span>' ).
+                replaceAll('s16', '<span class=c3>s16</span>' ).
+                replaceAll('s32', '<span class=c3>s32</span>' ).
+                replaceAll('u8', '<span class=c3>u8</span>' ).
+                replaceAll('u16', '<span class=c3>u16</span>' ).
+                replaceAll('u32', '<span class=c3>u32</span>' ).
+                replaceAll('sx', '<span class=c4>sx</span>' ).
+                replaceAll('ux', '<span class=c4>ux</span>' ).
+                replaceAll('length', '<span class=c4>length</span>' ).
+                replaceAll('imm', '<span class=c5>imm</span>' ).
+                replaceAll('offset', '<span class=c5>offset</span>' ).
+                replaceAll('inst', '<span class=c5>inst</span>' )
+        }
+
+        let str = ''
+        a.forEach(a => {
+            str += '<tr>'
+            str += `<td>${a[0].trim()} </td>`
+            str += `<td>${a[1].trim()}</td>`
+            if (typeof a[2] == 'string') {
+                str += `<td class=cod>${colorize(a[2]).trim()}</td>`
+            }
+            else {
+                str += `<td class=cod>${colorize(a[2][0]).trim()}<br>`
+                str += `${colorize(a[2][1]).trim()}</td>`
+            }
+            str += '</tr>'
+        })
+
+        document.getElementById('i1').innerHTML = str
+        
+        let entries = [
+        // ['inst', 'desc', 'type', 'parag', [[123,'sd'],[342,'dsf']]],
+        ['lui x30, 17', 'x30 🡨 17 << 12','U-TYPE','Fill x30\'s upper 20 bits with 17.',[['imm[11:0]','00000000000000010001'], ['rd','11110'] ,['op','0110111']]],
+        ['auipc x13, 64', 'x13 🡨 pc + 64 << 12','U-TYPE', 'Fill x13 with pc+64<<12.',[['imm[11:0]','00000000000001000000'] ,['rd','01101'] ,['op','0010111']]],
+        ['jal x1, 60506', 'x1 🡨 pc + 32 <br> pc 🡨 pc + 60506','J-TYPE', 'Save address of next instruction to x1, and jump 60506 addresses ahead.',[['imm[20]','0'], ['imm[10:1]','1000101101'], ['imm[11]','1'], ['imm[19:12]','00001110'] ,['rd','00001'] ,['op','1101111']]],
+        ['blt x10, x0, 62', 'if x10 < x0 then <br> pc 🡨 pc + 62','B-TYPE','If the value in x10 is less than the value in x0, jump 62 addresses ahead.',[['imm[12|10:5]','0000011'], ['rs2','00000'], ['rs1','01010'], ['fn','100'], ['imm[4:1|11]','11100'] ,['op','1100011']]],
+        ['srai x21, x15, 3','x21 🡨 sx(x15) >> 3', 'I-TYPE','Shift bits stored in x15 3 bits to the right, while filling 3 new empty bits with the leftmost bit\'s value, and put it inside x21.',[['fn2','0100000' ],['shamt','00011'], ['rs1','01111'], ['fn1','101'] ,['rd','10101'] ,['op','0010011']]],
+        ['sb x15, 3(x10)', 'u8[x10 + 3] 🡨 x15','S-TYPE','Take the lowest byte from x15\'s value, and store it in the address x10+3.',[['imm[11:5]','0000000'] ,['rs2','01111'] ,['rs1','01010'], ['fn','000'],['imm[4:0]','00011'] ,['op','0100011']]],
+        ['addi x15, x10, 16', 'x15 🡨 x10 + 16', 'I-TYPE', 'Add x10 with 16, put in x15.',[['imm[11:0]','000000010000'], ['rs1','01010'], ['fn','000'] ,['rd','01111'] ,['op','0010011']]],
+        ['beq x15, x19, 432', 'if x15 = x19 then <br> pc 🡨 pc + 432','B-TYPE','If the values in x15 and x19 are equal, jump 432 addresses ahead.',[['imm[12|10:5]','0001101'], ['rs2','10011'], ['rs1','01111'], ['fn','000'], ['imm[4:1|11]','10000'] ,['op','1100011']]],
+        ['xori x9, x9, -1', 'x9 🡨 ux(x9) ^ -1', 'I-TYPE','Perform an xor operation bit-by-bit of the value in x9 and -1 (all 1s), then put back in x9.',[['imm[11:0]','111111111111'], ['rs1','01001'], ['fn','100'] ,['rd','01001'] ,['op','0010011']]],
+        ['and x15, x25, x9', 'x15 🡨 ux(x25) & ux(x9)','R-TYPE', 'Perform a bitwise and operation on x25 and x9 then store the result in x15.',[['fn2','0000000'], ['rs2','01001'], ['rs1','11001'] ,['fn1','111'] ,['rd','01111'],['op','0110011']]],
+        ['or x14, x10, x12', 'x14 🡨 ux(x10) | ux(x12)','R-TYPE', 'Perform a bitwise or operation on x10 and x12 then store the result in x14.', [['fn2','0000000'], ['rs2','01100'], ['rs1','01010'], ['fn1','110'] ,['rd','01110'],['op','0110011']]],
+        ['lbu x28, 1(x10)', 'x28 🡨 u8[x10 + 1]','I-TYPE', 'Get the 8-bit value in the memory at the atddress x10+1, then put it on the lowest byte of x28, while filling the upper 3 bytes with zeros.',[['imm[11:0]','000000000001'], ['rs1','01010'], ['fn','100'] ,['rd','11100'] ,['op','0000011']]],
+        ['slli x15, x14, 5', 'x15 🡨 ux(x14) << 5', 'I-TYPE','Shift bits stored in x14 5 bits to the left, while filling the 5 new empty bits with zeros (hence \'logic\' shift, and put it inside x15.',[['fn2','0000000'], ['shamt','00101'], ['rs1','01110'], ['fn1','001'] ,['rd','01111'] ,['op','0010011']]],
+        ['sw x16, 4(x25)', 'u32[x25 + 4] 🡨 x16','S-TYPE','Take the low 4 bytes from x16\'s value, put them in the 4 addresses starting from x25+4. The endianness is set by EEI during the execution, so it\'s not guaranteed, but in either case, loading the same bytes using LW instruction should give bytes in the same order.',[['imm[11:5]','0000000'], ['rs2','10000'], ['rs1','11001'], ['fn','010'] ,['imm[4:0]','00100'] ,['op','0100011']]],
+        ['sub x15, x14, x8', 'x15 🡨 sx(x14) - sx(x8)','R-TYPE', 'Calculate the value x14-x8 by treating both registers as signed, and store the result in x15.',[['fn2','0100000'], ['rs2','01000'], ['rs1','01110'], ['fn1','000'] ,['rd','01111'] ,['op','0110011']]],
+        ['bne x15, x14, -26', 'if x15 ≠ x14 then <br> pc 🡨 pc - 26','B-TYPE','If the values in registers x15 and x14 are different, move 26 addresses backwards.',[['imm[12|10:5]','1111111'], ['rs2','01110'], ['rs1','01111'], ['fn','001'], ['imm[4:1|11]','00111'] ,['op','1100011']]],
+        ] // inst, instdesc, type, parag, [digs, desc]
+        str = ''
+        entries.forEach(e => {
+            let cs = ''
+            // e[0] e[1] e[2] e[3] av cs
+            e[4].forEach(d => {
+                cs += `<div class="t2digits">
+                    <div>${d[1]}</div>
+                    <div>🡫</div>
+                    <div>${d[0]}</div>
+                </div>`
+            })
+
+            str += `<div class="t2">
+            <div>
+                <div class="t2left">
+                    <div> ${e[0]}</div>
+                    <div> ${e[1]}</div>
+                    <div> ${e[2]} </div>
+                </div>
+                <div class="t2right">
+                    <div></div>
+                    ${cs}<div></div>
+                </div>
+            </div>
+            <div class="t2para">
+               ${e[3]}</div>
+            </div>`
+        })
+
+        document.getElementById('t2section').innerHTML = str
+
+
+    </script>
+</body>
+</html>
+
