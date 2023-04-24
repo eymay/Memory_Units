@@ -16,7 +16,6 @@ module InstMem_Tb ();
     reg [31:0] instructions [0:depth -1];
 
     integer idx;
-    
 
     Memblock #(.WIDTH(32), .DEPTH(depth)) m (
         .clk,
@@ -27,8 +26,6 @@ module InstMem_Tb ();
         .wr_addr0,
         .wr_din0
     );
-
-    
 
     always #5 clk = ~clk;
 
@@ -69,7 +66,6 @@ module InstMem_Tb ();
         $finish;
     end
 
-
     task automatic writeAll;
         for(int i=0; i<depth; i=i+1) begin
             wr_addr0=i;
@@ -77,12 +73,12 @@ module InstMem_Tb ();
             #10;
         end
     endtask
+
         // prints content of all addresses
     task automatic readAll;
         for(int i=0; i<depth; i=i+1) begin
             rd_addr0=i;
             $display("Address: %d Data_Hex: %8h Data_Bin: %32b", rd_addr0, rd_dout0, rd_dout0);
-            //$display("%8h Address %7d", rd_dout0, rd_addr0);
             #10;
         end
     endtask
