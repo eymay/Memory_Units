@@ -67,6 +67,20 @@
             padding-bottom: 0px;
         }
 
+        .t2:nth-child(6){
+            margin-top: 50px;
+            margin-bottom: 20px;
+            position: relative;
+            top: 10px;
+        }
+
+        .t2:nth-child(13) {
+            margin-top: 150px;
+            margin-bottom: 20px;
+            position: relative;
+            top: 10px;
+        }
+
         .t2para {
             color:rgb(143, 27, 27);
             padding: 10px;
@@ -105,9 +119,27 @@
         .t2right > :nth-child(1), .t2right > :nth-last-child(1) {
             flex: 10;
         }
+
+        authors {
+            position: relative;
+            top: -10px;
+        }
+
+        h3.nop {
+            margin-top: 60px;
+        }
     </style>
 </head>
 <body>
+
+    <h1>VLSI II - Assignment 5</h1>
+    <authors>
+    <p>Mehmet Eymen Ünay 040190218 <br>
+    Deniz Bashgoren 040180902</p>
+    </authors>
+
+    <h3>RV32I Instruction Set</h3>
+    <p>The table of all RV32I instructions and a short description in pseudocode:</p>
 
     <table id="t1">
         <thead>
@@ -118,7 +150,8 @@
         <tbody id="i1"></tbody>
     </table>
 
-    This is list of asdfdfg fdg gf dfg.
+    <h3>Encoding of RV32I Instructions</h3>
+    <p>16 of the RV32I instructions have been selected and their encoding is analyzed below.</p>
 
     <section id="t2section">
     <div class="t2">
@@ -267,6 +300,113 @@
     </div>
     </section>
     
+    <h3 class="nop">The NOP and HINT instructions</h3>
+    <p>
+        NOP is a pseudoinstruction that does nothing, but occupy space. This is desired in cases like:
+        </p>
+        <ul>
+            <li>When we want to make sure there is enough space between certain instructions</li>
+            <li>In jump tables (such as in switch statements in C), where the distance in instructions needs to be precise</li>
+            <li>At the end of the program, to make sure that the program doesn&#39;t trigger a trap</li>
+        </ul>
+        <p>
+        In practice, any instruction that doesn't change the state of the registers and the memory can be used as a NOP, however,
+        the RISC-V specification defines a canonical encoding for the NOP: <code>addi x0, x0, 0</code> (in hexadecimal: 0x00000013).
+    </p>
+    <p>
+        Other encodings of NOP have been named as HINT instructions in the standard. These have no effect on the visible state but may be used to communicate
+        with the RISC-V hardware in an implementation-specific way. For example, a hardware implementer might define that <code>slti x0, x1, 2</code> can be used
+        to signal the hardware that the next branch is not likely to be taken. This permits the ISA users to mark branches unlikely to be taken in this way, thereby
+        allowing the hardware to optimize its internal circuitry. The table of all reserved and non-reserved hint instructions:
+    </p>
+    <img src="hint_instrs.png">
+
+    <h3>Instruction Memory</h3>
+    <p>
+        In the testbench, we first load the instructions from the file <code>instInit.txt</code> into a register internal to the testbench, named <code>instructions</code>.
+        The instInit file holds the instructions in hexadecimal format, however, if its binary equivalent is also provided as a seperate file <code>instInitBin.txt</code>.
+        In the testbench we first demonstrate that rst works asynchronously. As seen in the waveform below, the contents of the memory change to 0 right when rst is activated.
+    </p>
+        <img src="instmem_isasync.png">
+    <p>
+        Next, we demonstrate that while we=0, the write operations won&#39;t work. First we try to fill up the memory while we0=0, and then while we0=1.
+    </p>
+    <!-- <img src="instmem_before.png">
+    <img src="instmem_after.png"> -->
+
+    
+
+
+    <code>
+    <pre>
+Address:   0 Data_Hex: 00000000 Data_Bin: 00000000000000000000000000000000
+Address:   1 Data_Hex: 00000000 Data_Bin: 00000000000000000000000000000000
+Address:   2 Data_Hex: 00000000 Data_Bin: 00000000000000000000000000000000
+Address:   3 Data_Hex: 00000000 Data_Bin: 00000000000000000000000000000000
+Address:   4 Data_Hex: 00000000 Data_Bin: 00000000000000000000000000000000
+Address:   5 Data_Hex: 00000000 Data_Bin: 00000000000000000000000000000000
+Address:   6 Data_Hex: 00000000 Data_Bin: 00000000000000000000000000000000
+Address:   7 Data_Hex: 00000000 Data_Bin: 00000000000000000000000000000000
+...
+</pre>
+</code>
+
+<code>
+    <pre>
+Address:   0 Data_Hex: 00011f37 Data_Bin: 00000000000000010001111100110111
+Address:   1 Data_Hex: 00040697 Data_Bin: 00000000000001000000011010010111
+Address:   2 Data_Hex: 45b0e0ef Data_Bin: 01000101101100001110000011101111
+Address:   3 Data_Hex: 06054e63 Data_Bin: 00000110000001010100111001100011
+Address:   4 Data_Hex: 4037da93 Data_Bin: 01000000001101111101101010010011
+Address:   5 Data_Hex: 00f501a3 Data_Bin: 00000000111101010000000110100011
+Address:   6 Data_Hex: 01050793 Data_Bin: 00000001000001010000011110010011
+Address:   7 Data_Hex: 1b378863 Data_Bin: 00011011001101111000100001100011
+...
+</pre>
+</code>
+
+<p>Running the testbench repeatedly emits the warning: <code>VCD warning: array word InstMem_Tb.m.mem[0] will conflict with an escaped identifier.
+</code>. It can be suppressed as explained in <code>https://stackoverflow.com/questions/20317820/</code>. We decided to keep the code simpler at the cost of this warning. </p>
+
+<h3>Data Memory</h3>
+
+<p><code>wr_strb</code> is encoded as following:</p>
+<code>
+<pre>
+input wire [2:0] wr_strb;
+// wr_strb = 000 -> store word
+// wr_strb = 001 -> store lower halfword
+// wr_strb = 010 -> nop
+// wr_strb = 011 -> store higher halfword
+// wr_strb = 100 -> store lowest byte
+// wr_strb = 101 -> store 2nd lowest byte
+// wr_strb = 110 -> store 3rd lowest byte
+// wr_strb = 111 -> store highest byte
+</pre>
+</code>
+<p>The state 010 is chosen to be nop to simplify the hardware: the msb bit controls the byte-level stores; the lsb bit controls the halfword-level stores and the combination 000 is for word-level stores.
+The enum-like encoding of wr_strb allows us increment it in the testbench as if it was an integer. In the testbench, a value of 0xAABBCCDD is placed in the addresses starting from 0, but each time with a new wr_strb mode.
+The values are stored in little endian order. In the testbench we&#39;ve redefined DEPTH=8 so that the console output is more consice, however it can easily be changed to its original value of 128. The end result is as following:</p>
+<code>
+<pre>
+...
+Address: 0 Data_Hex: aabbccdd Data_Bin: 10101010101110111100110011011101
+Address: 1 Data_Hex: 0000ccdd Data_Bin: 00000000000000001100110011011101
+Address: 2 Data_Hex: 00000000 Data_Bin: 00000000000000000000000000000000
+Address: 3 Data_Hex: ccdd0000 Data_Bin: 11001100110111010000000000000000
+Address: 4 Data_Hex: 000000dd Data_Bin: 00000000000000000000000011011101
+Address: 5 Data_Hex: 0000dd00 Data_Bin: 00000000000000001101110100000000
+Address: 6 Data_Hex: 00dd0000 Data_Bin: 00000000110111010000000000000000
+Address: 7 Data_Hex: dd000000 Data_Bin: 11011101000000000000000000000000
+</pre>
+</code>
+
+
+
+
+
+
+
     <script>
 
         let a =[

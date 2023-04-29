@@ -39,7 +39,8 @@ module InstMem_Tb ();
 
     initial begin
         $readmemh(initFile, instructions);
-        $display("%h\n%h\n%h", instructions[0], instructions[1], instructions[2]);
+        $display("Here we just make sure that we imported the instructions from the file:");
+        $display("%h\n%h\n%h\n---", instructions[0], instructions[1], instructions[2]);
         $dumpfile("waveform/InstMem_Tb.vcd");
         $dumpvars(0, InstMem_Tb);
         for (idx = 0; idx < depth; idx = idx + 1) $dumpvars(0, m.mem[idx]);
@@ -81,6 +82,7 @@ module InstMem_Tb ();
             $display("Address: %d Data_Hex: %8h Data_Bin: %32b", rd_addr0, rd_dout0, rd_dout0);
             #10;
         end
+        $display("-----------------------------------------");
     endtask
 
     
