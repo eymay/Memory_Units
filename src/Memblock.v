@@ -53,7 +53,6 @@ module Memblock (clk, rst, rd_addr0, wr_addr0, wr_din0, we0, rd_dout0 );
         for (integer i = 0; i<DEPTH; i=i+1) begin
             $display("addr %7d: data %32b", i, mem[i]);
         end
-        $display("----------------------------------------");
     endtask
 
 
